@@ -1,7 +1,7 @@
 {
-  "name": "Gattitown Issues",
+  "name": "Gattitown Assets",
   "short_name": "Gattitown",
-  "description": "Floor issue tracker for Gattitown",
+  "description": "Asset management & issue tracker for Gattitown",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0c0f",

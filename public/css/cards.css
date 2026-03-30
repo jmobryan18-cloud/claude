@@ -1,0 +1,126 @@
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 5px solid;
+  cursor: pointer;
+  position: relative;
+  animation: fadeIn 0.18s ease;
+  transition: background 0.12s;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.card:active { background: #161b24; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card[data-priority="CRITICAL"] { border-left-color: var(--critical); }
+.card[data-priority="HIGH"]     { border-left-color: var(--high); }
+.card[data-priority="MEDIUM"]   { border-left-color: var(--medium); }
+.card[data-priority="MONITOR"]  { border-left-color: var(--monitor); }
+.card.resolved { opacity: 0.38; filter: grayscale(0.5); }
+
+.card-inner {
+  padding: 13px 14px 10px;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.card-name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.priority-badge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 3px 7px;
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.card[data-priority="CRITICAL"] .priority-badge { color: var(--critical); border-color: var(--critical); background: rgba(255,45,45,0.08); }
+.card[data-priority="HIGH"]     .priority-badge { color: var(--high);     border-color: var(--high);     background: rgba(255,140,0,0.08); }
+.card[data-priority="MEDIUM"]   .priority-badge { color: var(--medium);   border-color: var(--medium);   background: rgba(245,196,0,0.08); }
+.card[data-priority="MONITOR"]  .priority-badge { color: var(--monitor);  border-color: var(--monitor);  background: rgba(0,194,255,0.08); }
+
+.card-issue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.card-status {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 14px;
+  border-top: 1px solid var(--border);
+  background: var(--dim);
+}
+
+.card-ts {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+}
+
+.card.resolved .priority-badge::before { content: '✓ '; }
+
+/* ── ASSET CARD ── */
+.card[data-status="ACTIVE"]  { border-left-color: #00c875; }
+.card[data-status="DOWN"]    { border-left-color: var(--critical); }
+.card[data-status="RETIRED"] { border-left-color: var(--muted); opacity: 0.5; }
+
+.status-badge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 3px 7px;
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.status-badge.active  { color: #00c875; border-color: #00c875; background: rgba(0,200,117,0.08); }
+.status-badge.down    { color: var(--critical); border-color: var(--critical); background: rgba(255,45,45,0.08); }
+.status-badge.retired { color: var(--muted); border-color: var(--muted); background: rgba(74,85,104,0.08); }
+
+.card-meta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.card-issue-count {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--high);
+}

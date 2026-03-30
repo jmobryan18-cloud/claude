@@ -1,0 +1,134 @@
+/* ── FORMS ── */
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  background: var(--dim);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 11px 12px;
+  outline: none;
+  appearance: none;
+  border-radius: 0;
+  transition: border-color 0.15s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(--muted); }
+.form-group textarea { resize: vertical; min-height: 80px; line-height: 1.4; }
+.form-group select option { background: var(--surface); }
+
+/* ── BUTTONS ── */
+.btn-save {
+  flex: 1;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-save:active { opacity: 0.8; }
+
+.btn-secondary {
+  flex: 1;
+  background: var(--dim);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.btn-secondary:active { color: var(--text); }
+
+.btn-resolve {
+  width: 100%;
+  background: none;
+  border: 1px solid #00c875;
+  color: #00c875;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-resolve:active { background: rgba(0,200,117,0.1); }
+.btn-resolve.reopen { border-color: var(--muted); color: var(--muted); }
+
+.btn-delete {
+  width: 100%;
+  background: none;
+  border: 1px solid rgba(255,45,45,0.3);
+  color: rgba(255,45,45,0.6);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: all 0.15s;
+}
+.btn-delete:active { color: var(--critical); border-color: var(--critical); }
+
+/* Menu items */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px 14px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.menu-item:active { background: #161b24; }
+.menu-item .menu-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.menu-item .menu-desc {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+.menu-item .menu-arrow {
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+/* view vs edit mode in sheet */
+.edit-mode { display: none; }
+.view-mode { display: block; }
+.sheet.editing .view-mode { display: none; }
+.sheet.editing .edit-mode { display: block; }

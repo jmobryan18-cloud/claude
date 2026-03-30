@@ -1,0 +1,13 @@
+services:
+  gattitown:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/data
+      - ./data/photos:/data/photos
+    environment:
+      - NODE_ENV=production
+      - DATA_DIR=/data
+      - PHOTOS_DIR=/data/photos
+    restart: unless-stopped
