@@ -1,11 +1,12 @@
 services:
   gattitown:
     build: .
+    container_name: gattitown
     ports:
-      - "3000:3000"
+      - "${PORT:-3000}:3000"
     volumes:
-      - ./data:/data
-      - ./data/photos:/data/photos
+      - ${DATA_PATH:-./data}:/data
+      - ${PHOTOS_PATH:-./data/photos}:/data/photos
     environment:
       - NODE_ENV=production
       - DATA_DIR=/data
